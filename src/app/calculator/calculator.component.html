@@ -1,0 +1,79 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Simple Calculator</h2>
+
+  <!-- Number Inputs Section -->
+  <div class="row mb-3">
+    <div class="col-md-6 offset-md-3">
+      <label for="number1" class="form-label">Number 1</label>
+      <input
+        type="number"
+        class="form-control"
+        [(ngModel)]="FirstNumber"
+        id="number1"
+        placeholder="Enter the first number"
+        required
+      />
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6 offset-md-3">
+      <label for="number2" class="form-label">Number 2</label>
+      <input
+        type="number"
+        class="form-control"
+        [(ngModel)]="SecondNumber"
+        id="number2"
+        placeholder="Enter the second number"
+        required
+      />
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-6 offset-md-3 text-center">
+      <div class="btn-group w-100" role="group" aria-label="Operation buttons">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="calculate('add')"
+          *appHasRole="role"
+        >
+          Add
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="calculate('subtract')"
+          *appHasRole="role"
+        >
+          Subtract
+        </button>
+        <button
+          type="button"
+          class="btn btn-success"
+          (click)="calculate('multiply')"
+          *appHasRole="role"
+        >
+          Multiply
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="calculate('divide')"
+          *appHasRole="role"
+        >
+          Divide
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Result Section -->
+  <div class="row mb-4">
+    <div class="col-md-6 offset-md-3">
+      <h4 class="text-center">Result</h4>
+      <app-input-output [result]="result"></app-input-output>
+    </div>
+  </div>
+</div>
